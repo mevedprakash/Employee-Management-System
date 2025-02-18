@@ -1,6 +1,8 @@
 ﻿using EmployeeManagementSystem.Data;
 using EmployeeManagementSystem.Entity;
 using EmployeeManagementSystem.Models;
+using EmployeeManagementSystem.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -17,12 +19,14 @@ namespace EmployeeManagementSystem.Controllers
     {
         private readonly IRepository<User> userRepo;
         private readonly IConfiguration configuration;
+        private readonly IRepository<Employee> empRepo;
 
-        public AuthController(IRepository<User> userRepo, IConfiguration configuration)
+        public AuthController(IRepository<User> userRepo, IConfiguration configuration, IRepository<Employee> empRepo)
         {
 
             this.userRepo = userRepo;
             this.configuration = configuration;
+            this.empRepo = empRepo;
         }
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] AuthDto model)
@@ -32,11 +36,13 @@ namespace EmployeeManagementSystem.Controllers
             {
                 return new BadRequestObjectResult(new { message = "user not found" });
             }
-            if (user.Password != model.Password)
+
+            var passwordHelper = new PasswordHelper();
+
+            if (!passwordHelper.VerifyPassword(user.Password, model.Password))
             {
                 return new BadRequestObjectResult(new { message = "email or password incorrect" });
             }
-            //todo
 
             var token = GenerateToken(user.Email, user.Role);
             return Ok(new AuthTokenDto()
@@ -67,5 +73,45 @@ namespace EmployeeManagementSystem.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
+        [Authorize]
+        [HttpPost("profile")]
+        public async Task<IActionResult> UpdateProfile([FromBody] ProfileDto model)
+        {
+            var email = User.FindFirstValue(ClaimTypes.Name);
+            var user = (await userRepo.GetAll(x => x.Email == email)).First();
+            var employee = (await empRepo.GetAll(x => x.UserId == user.Id)).FirstOrDefault();
+            if (employee != null)
+            {
+                employee.Name = model.Name;
+                employee.Email = model.Email;
+                employee.Phone = model.Phone;
+                empRepo.Update(employee);
+            }
+            user.Email = model.Email;
+            user.ProfileImage = model.ProfileImage;
+            var passwordHelper = new PasswordHelper();
+            user.Password = passwordHelper.HashPassword(model.Password);
+            userRepo.Update(user);
+            await userRepo.SaveChangesAsync();
+            return Ok();
+        }
+        [Authorize]
+        [HttpGet("profile")]
+        public async Task<IActionResult> GetProfile()
+        {
+            var email = User.FindFirstValue(ClaimTypes.Name);
+            var user = (await userRepo.GetAll(x => x.Email == email)).First();
+            var employee = (await empRepo.GetAll(x => x.UserId == user.Id)).FirstOrDefault();
+            return Ok(new ProfileDto()
+            {
+                Name = employee?.Name,
+                Email = user.Email,
+                Phone = employee?.Phone,
+                ProfileImage = user.ProfileImage
+            });
+        }
     }
+
+
 }

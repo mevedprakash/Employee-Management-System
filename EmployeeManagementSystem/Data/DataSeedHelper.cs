@@ -1,4 +1,5 @@
 ﻿using EmployeeManagementSystem.Entity;
+using EmployeeManagementSystem.Service;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -25,16 +26,17 @@ namespace EmployeeManagementSystem.Data
             
             if (!dbContext.Users.Any())
             {
+                var passwordHelper = new PasswordHelper();
                 dbContext.Users.Add(new User()
                 {
                     Email = "admin@test.com",
-                    Password = "12345",
+                    Password = passwordHelper.HashPassword("12345"),
                     Role = "Admin"
                 });
                 dbContext.Users.Add(new User()
                 {
                     Email = "emp1@test.com",
-                    Password = "12345",
+                    Password = passwordHelper.HashPassword("12345"),
                     Role = "Employee"
                 });
             }

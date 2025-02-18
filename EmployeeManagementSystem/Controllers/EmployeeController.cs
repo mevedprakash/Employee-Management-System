@@ -1,5 +1,6 @@
 ﻿using EmployeeManagementSystem.Data;
 using EmployeeManagementSystem.Entity;
+using EmployeeManagementSystem.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +12,12 @@ namespace EmployeeManagementSystem.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IRepository<Employee> employeeRepository;
+        private readonly IRepository<User> userRepo;
 
-        public EmployeeController(IRepository<Employee> employeeRepository)
+        public EmployeeController(IRepository<Employee> employeeRepository, IRepository<User> userRepo)
         {
             this.employeeRepository = employeeRepository;
+            this.userRepo = userRepo;
         }
 
         [HttpGet]
@@ -35,6 +38,14 @@ namespace EmployeeManagementSystem.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddEmployee([FromBody] Employee model)
         {
+            var user = new User()
+            {
+                Email = model.Email,
+                Role = "Employee",
+                Password = (new PasswordHelper()).HashPassword("12345")
+            };
+            await userRepo.AddAsync(user);
+            model.User = user;
             await employeeRepository.AddAsync(model);
             await employeeRepository.SaveChangesAsync();
             return Ok();

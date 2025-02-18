@@ -18,6 +18,6 @@ namespace EmployeeManagementSystem.Entity
         public DateTime DateOfBirth { get; set; }
 
         public int? UserId { get; set; }
-        public User User { get; set; }
+        public User? User { get; set; }
     }
 }
