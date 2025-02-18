@@ -3,24 +3,64 @@
   "WorkspaceRootPath": "E:\\codewithved-projects\\EmployeeManagementSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\models\\authtokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\models\\authtokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Migrations\\20250218064311_change-dob;todatetime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManagementSystem\\Migrations\\20250218064311_change-dob;todatetime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\entity\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\entity\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\data\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\data\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\data\\dataseedhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\data\\dataseedhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\models\\authdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\models\\authdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Migrations\\20250218082320_Add User table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManagementSystem\\Migrations\\20250218082320_Add User table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\entity\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\entity\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|e:\\codewithved-projects\\employeemanagementsystem\\employeemanagementsystem\\migrations\\20250218064311_change-dob;todatetime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AF99459-A645-4304-82EE-8255C5B433EE}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\migrations\\20250218064311_change-dob;todatetime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +74,98 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DepartmentController.cs",
+              "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Controllers\\DepartmentController.cs",
+              "RelativeDocumentMoniker": "EmployeeManagementSystem\\Controllers\\DepartmentController.cs",
+              "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Controllers\\DepartmentController.cs",
+              "RelativeToolTip": "EmployeeManagementSystem\\Controllers\\DepartmentController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAywCsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T09:54:50.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Data\\IRepository.cs",
+              "RelativeDocumentMoniker": "EmployeeManagementSystem\\Data\\IRepository.cs",
+              "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Data\\IRepository.cs",
+              "RelativeToolTip": "EmployeeManagementSystem\\Data\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T09:01:48.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AuthTokenDto.cs",
+              "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Models\\AuthTokenDto.cs",
+              "RelativeDocumentMoniker": "EmployeeManagementSystem\\Models\\AuthTokenDto.cs",
+              "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Models\\AuthTokenDto.cs",
+              "RelativeToolTip": "EmployeeManagementSystem\\Models\\AuthTokenDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T08:32:15.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AuthDto.cs",
+              "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Models\\AuthDto.cs",
+              "RelativeDocumentMoniker": "EmployeeManagementSystem\\Models\\AuthDto.cs",
+              "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Models\\AuthDto.cs",
+              "RelativeToolTip": "EmployeeManagementSystem\\Models\\AuthDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T08:29:09.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "EmployeeManagementSystem\\Controllers\\AuthController.cs",
+              "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "EmployeeManagementSystem\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAIwC4AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T08:26:39.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "EmployeeManagementSystem\\Data\\AppDbContext.cs",
+              "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "EmployeeManagementSystem\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T08:22:45.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Entity\\User.cs",
+              "RelativeDocumentMoniker": "EmployeeManagementSystem\\Entity\\User.cs",
+              "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Entity\\User.cs",
+              "RelativeToolTip": "EmployeeManagementSystem\\Entity\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T08:21:20.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "20250218064311_change-dob;todatetime.cs",
               "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Migrations\\20250218064311_change-dob;todatetime.cs",
               "RelativeDocumentMoniker": "EmployeeManagementSystem\\Migrations\\20250218064311_change-dob;todatetime.cs",
@@ -47,52 +178,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "EmployeeManagementSystem\\Controllers\\EmployeeController.cs",
+              "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "EmployeeManagementSystem\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAiwBQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T05:10:12.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\appsettings.json",
+              "RelativeDocumentMoniker": "EmployeeManagementSystem\\appsettings.json",
+              "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\appsettings.json",
+              "RelativeToolTip": "EmployeeManagementSystem\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-18T09:04:49.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Employee.cs",
               "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Entity\\Employee.cs",
               "RelativeDocumentMoniker": "EmployeeManagementSystem\\Entity\\Employee.cs",
               "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Entity\\Employee.cs",
               "RelativeToolTip": "EmployeeManagementSystem\\Entity\\Employee.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAywBEAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAIBAwAkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-14T05:22:11.034Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DataSeedHelper.cs",
-              "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Data\\DataSeedHelper.cs",
-              "RelativeDocumentMoniker": "EmployeeManagementSystem\\Data\\DataSeedHelper.cs",
-              "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Data\\DataSeedHelper.cs",
-              "RelativeToolTip": "EmployeeManagementSystem\\Data\\DataSeedHelper.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAUwBYAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T05:18:47.958Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Program.cs",
               "RelativeDocumentMoniker": "EmployeeManagementSystem\\Program.cs",
               "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Program.cs",
               "RelativeToolTip": "EmployeeManagementSystem\\Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAB0AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAACAAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T05:13:19.121Z"
+              "WhenOpened": "2025-02-14T05:13:19.121Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EmployeeController.cs",
-              "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Controllers\\EmployeeController.cs",
-              "RelativeDocumentMoniker": "EmployeeManagementSystem\\Controllers\\EmployeeController.cs",
-              "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Controllers\\EmployeeController.cs",
-              "RelativeToolTip": "EmployeeManagementSystem\\Controllers\\EmployeeController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAA1wDIAAAAYAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Data\\Repository.cs",
+              "RelativeDocumentMoniker": "EmployeeManagementSystem\\Data\\Repository.cs",
+              "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Data\\Repository.cs",
+              "RelativeToolTip": "EmployeeManagementSystem\\Data\\Repository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T05:10:12.531Z",
+              "WhenOpened": "2025-02-18T09:02:03.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DataSeedHelper.cs",
+              "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Data\\DataSeedHelper.cs",
+              "RelativeDocumentMoniker": "EmployeeManagementSystem\\Data\\DataSeedHelper.cs",
+              "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Data\\DataSeedHelper.cs",
+              "RelativeToolTip": "EmployeeManagementSystem\\Data\\DataSeedHelper.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAWwCQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T05:18:47.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20250218082320_Add User table.cs",
+              "DocumentMoniker": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Migrations\\20250218082320_Add User table.cs",
+              "RelativeDocumentMoniker": "EmployeeManagementSystem\\Migrations\\20250218082320_Add User table.cs",
+              "ToolTip": "E:\\codewithved-projects\\EmployeeManagementSystem\\EmployeeManagementSystem\\Migrations\\20250218082320_Add User table.cs",
+              "RelativeToolTip": "EmployeeManagementSystem\\Migrations\\20250218082320_Add User table.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T08:23:21.156Z",
               "EditorCaption": ""
             }
           ]

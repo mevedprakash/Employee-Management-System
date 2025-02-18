@@ -1,7 +1,10 @@
 using EmployeeManagementSystem.Data;
 using EmployeeManagementSystem.Entity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Scalar.AspNetCore;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,14 +24,27 @@ builder.Services.AddCors(option =>
     });
 });
 
-builder.Services.AddDbContext<AppDbContext>(option=>
+builder.Services.AddDbContext<AppDbContext>(option =>
  option.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
 
 builder.Services.AddScoped<IRepository<Department>, Repository<Department>>();
 builder.Services.AddScoped<IRepository<Employee>, Repository<Employee>>();
+builder.Services.AddScoped<IRepository<User>, Repository<User>>();
+builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetValue<string>("JwtKey")!))
+    };
+});
 
+builder.Services.AddAuthorization();
 var app = builder.Build();
-using ( var scope = app.Services.CreateScope())
+using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     var dataSeedHelper = new DataSeedHelper(dbContext);
@@ -44,6 +60,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseCors("AllowCrosOrigin");
 app.UseHttpsRedirection();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

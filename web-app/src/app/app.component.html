@@ -1,15 +1,21 @@
 <header>
-  <mat-toolbar class="bg-blue-400!">
-    <button
-      (click)="drawer.toggle()"
-      mat-icon-button
-      class="text-white!"
-      aria-label="Example icon-button with menu icon"
-    >
-      <mat-icon>menu</mat-icon>
+  <mat-toolbar class="bg-blue-400! flex justify-between">
+    <div>
+      <button
+        (click)="drawer.toggle()"
+        mat-icon-button
+        class="text-white!"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="text-white!">Employee Management System</span>
+    </div>
+    @if(authService.isLoggedIn){
+    <button (click)="logout()" mat-icon-button class="text-white!">
+      <mat-icon>logout</mat-icon>
     </button>
-    <span class="text-white!">Employee Management System</span>
-    <span class="example-spacer"></span>
+    }
   </mat-toolbar>
 </header>
 <mat-drawer-container class="">
@@ -17,17 +23,21 @@
     #drawer
     class="w-[300px] bg-white shadow-lg"
     [mode]="'side'"
-    [opened]="true"
+    [opened]="authService.isLoggedIn"
   >
     <div class="flex flex-col items-center gap-4 text-blue-700 p-4">
+      @if(authService.isEmployee){
+      <a routerLink="/employee-dashboard">Employee DashBoard</a>
+      }@else{
       <a routerLink="/">DashBoard</a>
       <a routerLink="/departments">Departments</a>
       <a routerLink="/employee">Employee List</a>
+      }
     </div>
   </mat-drawer>
   <mat-drawer-content>
     <main class="min-h-screen bg-gray-100">
-        <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </main>
   </mat-drawer-content>
 </mat-drawer-container>

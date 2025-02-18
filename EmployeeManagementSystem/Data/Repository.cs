@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace EmployeeManagementSystem.Data
 {
@@ -34,6 +35,12 @@ namespace EmployeeManagementSystem.Data
             var list =await dbSet.ToListAsync();
             return list;
         }
+        public async Task<List<T>> GetAll(Expression<Func<T, bool>> filter)
+        {
+            var list = await dbSet.AsQueryable().Where(filter).ToListAsync();
+            return list;
+        }
+
 
         public async Task<int> SaveChangesAsync()
         {
