@@ -1,6 +1,6 @@
 <header>
   <mat-toolbar class="bg-blue-400! flex justify-between">
-    <div>
+    <div class="flex items-center">
       <button
         (click)="drawer.toggle()"
         mat-icon-button
@@ -12,9 +12,13 @@
       <span class="text-white!">Employee Management System</span>
     </div>
     @if(authService.isLoggedIn){
-    <button (click)="logout()" mat-icon-button class="text-white!">
-      <mat-icon>logout</mat-icon>
-    </button>
+      <div class="flex gap-2 items-center">
+        <span routerLink="/profile" class="text-white! cursor-pointer">{{authService.authDetail?.email}}</span>
+        <button (click)="logout()" mat-icon-button class="text-white!">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+   
     }
   </mat-toolbar>
 </header>

@@ -57,6 +57,8 @@ export class EmployeeComponent {
   openDialog(): void {
     let ref = this.dialog.open(EmployeeFormComponent, {
       panelClass: 'm-auto',
+      data: {
+      },
     });
     ref.afterClosed().subscribe((result) => {
       this.getLatestDate();

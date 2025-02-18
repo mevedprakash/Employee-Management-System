@@ -33,12 +33,25 @@ export class AuthService {
     return localStorage.getItem('token') ? true : false;
   }
   get isEmployee() {
-    if(!this.isLoggedIn) return false;
+    if (!this.isLoggedIn) return false;
     let token = JSON.parse(localStorage.getItem('auth')!);
     if (token.role == 'Employee') {
       return true;
     } else {
       return false;
     }
+  }
+  get authDetail(): IAuthToken | null {
+    if (!this.isLoggedIn) return null;
+    let token: IAuthToken = JSON.parse(localStorage.getItem('auth')!);
+    return token;
+  }
+
+  getProfile(){
+    return this.http.get(environment.apiUrl+"/api/Auth/profile")
+  }
+
+  updateProfile(profile:any){
+    return this.http.post(environment.apiUrl+"/api/Auth/profile",profile)
   }
 }
