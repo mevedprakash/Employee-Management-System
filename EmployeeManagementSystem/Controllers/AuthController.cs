@@ -83,15 +83,33 @@ namespace EmployeeManagementSystem.Controllers
             var employee = (await empRepo.GetAll(x => x.UserId == user.Id)).FirstOrDefault();
             if (employee != null)
             {
-                employee.Name = model.Name;
-                employee.Email = model.Email;
-                employee.Phone = model.Phone;
+                if (!string.IsNullOrEmpty(model.Name))
+                {
+                    employee.Name = model.Name;
+                }
+                if (!string.IsNullOrEmpty(model.Email))
+                {
+                    employee.Email = model.Email;
+                }
+                if (!string.IsNullOrEmpty(model.Phone))
+                {
+                    employee.Phone = model.Phone;
+                }
                 empRepo.Update(employee);
             }
-            user.Email = model.Email;
-            user.ProfileImage = model.ProfileImage;
-            var passwordHelper = new PasswordHelper();
-            user.Password = passwordHelper.HashPassword(model.Password);
+            if (!string.IsNullOrEmpty(model.Email))
+            {
+                user.Email = model.Email;
+            }
+            if (!string.IsNullOrEmpty(model.ProfileImage))
+            {
+                user.ProfileImage = model.ProfileImage;
+            }
+            if (!string.IsNullOrEmpty(model.Password))
+            {
+                var passwordHelper = new PasswordHelper();
+                user.Password = passwordHelper.HashPassword(model.Password);
+            }
             userRepo.Update(user);
             await userRepo.SaveChangesAsync();
             return Ok();

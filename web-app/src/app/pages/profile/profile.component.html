@@ -12,9 +12,9 @@
         [formGroup]="profileForm"
         (ngSubmit)="onUpdate()"
       >
-        <div class="w-full mb-5">
-          <input class="bg-gray-400 cursor-pointer" type="file" (change)="fileUpload($event)" />
-          <img class="w-[150px]" [src]="imageSrc" alt="" />
+        <div class="w-full mb-5 flex flex-col items-center gap-2"> 
+          <img class="w-[150px] rounded-full" [src]="imageSrc" alt="" />
+          <input class="bg-gray-400 cursor-pointer p-2 rounded-sm! w-[105px]" type="file" (change)="fileUpload($event)" />
         </div>
         <mat-form-field class="full-width">
           <mat-label>Name</mat-label>

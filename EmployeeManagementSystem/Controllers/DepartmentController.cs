@@ -1,5 +1,6 @@
 ﻿using EmployeeManagementSystem.Data;
 using EmployeeManagementSystem.Entity;
+using EmployeeManagementSystem.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -39,10 +40,21 @@ namespace EmployeeManagementSystem.Controllers
 
         [HttpGet]
         [Authorize]
-        public async Task<IActionResult> GetAllDepartment()
+        public async Task<IActionResult> GetAllDepartment([FromQuery] SearchOptions options)
         {
             var list = await departmentRepository.GetAll();
-            return Ok(list);        
+            var pagedDate = new PagedData<Department>();
+            pagedDate.TotalData = list.Count;
+            if (options.PageIndex.HasValue)
+            {
+                pagedDate.Data = list.Skip(options!.PageIndex!.Value * options!.PageSize!.Value)
+                                        .Take(options.PageSize.Value).ToList();
+            }
+            else
+            {
+                pagedDate.Data = list;
+            }
+            return Ok(pagedDate);        
         }
 
         [HttpDelete("{id}")]

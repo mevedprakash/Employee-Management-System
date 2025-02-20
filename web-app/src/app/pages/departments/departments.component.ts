@@ -5,23 +5,37 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { PagedData } from '../../types/paged-data';
+import { TableComponent } from '../../components/table/table.component';
 
 @Component({
   selector: 'app-departments',
-  imports: [MatButtonModule, MatInputModule, MatFormFieldModule, FormsModule],
+  imports: [
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    TableComponent,
+  ],
   templateUrl: './departments.component.html',
   styleUrl: './departments.component.scss',
 })
 export class DepartmentsComponent {
   httpService = inject(HttpService);
-  departments: IDepartment[] = [];
+  departments!: PagedData<IDepartment>;
   isFormOpen = false;
+  filter = {
+    pageIndex: 0,
+    pageSize: 2,
+  };
+
+  showCols = ['id', 'name', 'action'];
   ngOnInit() {
     this.getLatestData();
   }
 
   getLatestData() {
-    this.httpService.getDepartments().subscribe((result) => {
+    this.httpService.getDepartments(this.filter).subscribe((result) => {
       this.departments = result;
     });
   }
@@ -55,5 +69,10 @@ export class DepartmentsComponent {
       alert('Records Deleted.');
       this.getLatestData();
     });
+  }
+  pageChange(event: any) {
+    console.log(event);
+    this.filter.pageIndex = event.pageIndex;
+    this.getLatestData();
   }
 }

@@ -12,24 +12,50 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { MatInputModule } from '@angular/material/input';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { debounceTime } from 'rxjs';
+import { PagedData } from '../../types/paged-data';
 
 @Component({
   selector: 'app-employee',
-  imports: [TableComponent, MatButtonModule],
+  imports: [
+    TableComponent,
+    MatButtonModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+  ],
   templateUrl: './employee.component.html',
   styleUrl: './employee.component.scss',
 })
 export class EmployeeComponent {
   httpService = inject(HttpService);
-  employeeList: IEmployee[] = [];
+  pagedEmployeeData!: PagedData<IEmployee>;
+
   showCols = ['id', 'name', 'email', 'phone', 'action'];
+  filter: any = {
+    pageIndex: 0,
+    pageSize: 2,
+  };
+
   ngOnInit() {
     this.getLatestDate();
+    this.searchControl.valueChanges
+      .pipe(debounceTime(300))
+      .subscribe((result: string | null) => {
+        console.log(result);
+        this.filter.search = result;
+        this.filter.pageIndex = 0;
+        this.getLatestDate();
+      });
   }
-
+  searchControl = new FormControl('');
+  totalData!: number;
   getLatestDate() {
-    this.httpService.getEmployeeList().subscribe((result) => {
-      this.employeeList = result;
+    this.httpService.getEmployeeList(this.filter).subscribe((result) => {
+      this.pagedEmployeeData = result;
     });
   }
   edit(employee: IEmployee) {
@@ -57,11 +83,16 @@ export class EmployeeComponent {
   openDialog(): void {
     let ref = this.dialog.open(EmployeeFormComponent, {
       panelClass: 'm-auto',
-      data: {
-      },
+      data: {},
     });
     ref.afterClosed().subscribe((result) => {
       this.getLatestDate();
     });
+  }
+
+  pageChange(event: any) {
+    console.log(event);
+    this.filter.pageIndex = event.pageIndex;
+    this.getLatestDate();
   }
 }

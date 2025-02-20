@@ -1,9 +1,11 @@
 ﻿using EmployeeManagementSystem.Data;
 using EmployeeManagementSystem.Entity;
+using EmployeeManagementSystem.Models;
 using EmployeeManagementSystem.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace EmployeeManagementSystem.Controllers
 {
@@ -22,9 +24,28 @@ namespace EmployeeManagementSystem.Controllers
 
         [HttpGet]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetEmployeeList()
+        public async Task<IActionResult> GetEmployeeList([FromQuery] SearchOptions searchOption)
         {
-            return Ok(await employeeRepository.GetAll());
+            var pagedData = new PagedData<Employee>();
+            if (string.IsNullOrEmpty(searchOption.Search))
+            {
+                pagedData.Data = await employeeRepository.GetAll();
+            }
+            else
+            {
+                pagedData.Data = await employeeRepository.GetAll(x =>
+                x.Name.Contains(searchOption.Search) ||
+                x.Phone.Contains(searchOption.Search) ||
+                x.Email.Contains(searchOption.Search)
+                );
+            }
+            pagedData.TotalData = pagedData.Data.Count;
+            if (searchOption.PageIndex.HasValue)
+            {
+                pagedData.Data = pagedData.Data.Skip(searchOption.PageIndex.Value * searchOption!.PageSize!.Value)
+                                .Take(searchOption.PageSize.Value).ToList();
+            }
+            return Ok(pagedData);
         }
 
         [HttpGet("{id}")]
