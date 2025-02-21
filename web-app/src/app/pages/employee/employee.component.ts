@@ -17,6 +17,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { debounceTime } from 'rxjs';
 import { PagedData } from '../../types/paged-data';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee',
@@ -34,7 +35,12 @@ export class EmployeeComponent {
   httpService = inject(HttpService);
   pagedEmployeeData!: PagedData<IEmployee>;
 
-  showCols = ['id', 'name', 'email', 'phone', 'action'];
+  showCols = ['id', 'name', 'email', 'phone', {
+    key:'action',
+    format:()=>{
+      return ["Edit","Delete","Attendace"]
+    }
+  }];
   filter: any = {
     pageIndex: 0,
     pageSize: 2,
@@ -94,5 +100,17 @@ export class EmployeeComponent {
     console.log(event);
     this.filter.pageIndex = event.pageIndex;
     this.getLatestDate();
+  }
+  router=inject(Router);
+  onRowClick(event:any){
+     if(event.btn==="Edit"){
+      this.edit(event.rowData)
+     }
+     if(event.btn==="Delete"){
+      this.delete(event.rowData)
+     }
+     if(event.btn==="Attendace"){
+       this.router.navigateByUrl("/attendace/"+event.rowData.id);
+     }
   }
 }

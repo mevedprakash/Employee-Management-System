@@ -20,6 +20,7 @@ export class TableComponent {
   @Output() rowClick = new EventEmitter<any>();
   @Input() pageIndex!: number;
   @Input() pageSize!: number;
+  @Input() showPage= true;
   cols: any[] = [];
   ngOnInit() {
     this.cols = this.displayedColumns.map((x) => x.key || x);

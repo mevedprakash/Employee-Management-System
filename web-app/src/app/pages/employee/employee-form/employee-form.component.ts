@@ -50,6 +50,7 @@ export class EmployeeFormComponent {
     email: ['', [Validators.required, Validators.email]],
     phone: ['', [Validators.required]],
     gender: [1, Validators.required],
+    salary:[],
     departmentId: ['', Validators.required],
     jobTitle: ['', [Validators.required]],
     joiningDate: [null, [Validators.required]],

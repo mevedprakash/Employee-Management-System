@@ -63,7 +63,8 @@ namespace EmployeeManagementSystem.Controllers
             {
                 Email = model.Email,
                 Role = "Employee",
-                Password = (new PasswordHelper()).HashPassword("12345")
+                Password = (new PasswordHelper()).HashPassword("12345"),
+                ProfileImage = ""
             };
             await userRepo.AddAsync(user);
             model.User = user;
@@ -78,11 +79,11 @@ namespace EmployeeManagementSystem.Controllers
         {
             var employee = await employeeRepository.FindByIdAsync(id);
             employee.Name = model.Name;
-            employee.Email = model.Email;
             employee.Phone = model.Phone;
             employee.DepartmentId = model.DepartmentId;
             employee.LastWorkingDate = model.LastWorkingDate;
             employee.JobTitle = model.JobTitle;
+            employee.Salary = model.Salary;
             employeeRepository.Update(employee);
             await employeeRepository.SaveChangesAsync();
             return Ok();
@@ -95,6 +96,8 @@ namespace EmployeeManagementSystem.Controllers
             await employeeRepository.SaveChangesAsync();
             return Ok();
         }
+
+
     }
 
 }

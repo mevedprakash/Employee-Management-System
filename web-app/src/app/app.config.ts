@@ -5,6 +5,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { tokenHttpIntercepotr } from './services/token-http-interceptor';
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
@@ -12,5 +13,6 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     provideHttpClient(withInterceptors([tokenHttpIntercepotr])),
     provideNativeDateAdapter(),
+    provideCharts(withDefaultRegisterables()),
   ],
 };

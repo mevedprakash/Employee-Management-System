@@ -16,11 +16,15 @@ namespace EmployeeManagementSystem.Controllers
     public class LeaveController : ControllerBase
     {
         private readonly IRepository<Leave> leaveRepo;
+        private readonly IRepository<Attendance> attendanceRepo;
         private readonly UserHelper userHelper;
 
-        public LeaveController(IRepository<Leave> leaveRepo, UserHelper userHelper)
+        public LeaveController(IRepository<Leave> leaveRepo,
+            IRepository<Attendance> attendanceRepo,
+            UserHelper userHelper)
         {
             this.leaveRepo = leaveRepo;
+            this.attendanceRepo = attendanceRepo;
             this.userHelper = userHelper;
         }
 
@@ -51,6 +55,16 @@ namespace EmployeeManagementSystem.Controllers
             if (isAdmin)
             {
                 leave.Status = model.Status!.Value;
+
+                if(model.Status.Value == (int)LeaveStatus.Accepted)
+                {
+                    await attendanceRepo.AddAsync(new Attendance()
+                    {
+                        Date = leave.LeaveDate,
+                        EmployeeId = leave.EmployeeId,
+                        Type = (int)AttendanceType.Leave
+                    });
+                }
             }
             else
             {

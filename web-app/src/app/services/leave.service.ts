@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { PagedData } from '../types/paged-data';
 import { ILeave } from '../types/leave';
+import { IAttendace } from '../types/attendace';
 
 @Injectable({
   providedIn: 'root',
@@ -29,5 +30,19 @@ export class LeaveService {
       id,
       status,
     });
+  }
+
+  markPresent() {
+    return this.http.post(
+      environment.apiUrl + '/api/Attendance/mark-present',
+      {}
+    );
+  }
+
+  getAttendaceHistory(filter: any) {
+    var params = new HttpParams({ fromObject: filter });
+    return this.http.get<PagedData<IAttendace>>(
+      environment.apiUrl + '/api/Attendance?' + params.toString()
+    );
   }
 }

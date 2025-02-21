@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { EmployeedashboardComponent } from './pages/employeedashboard/employeedashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LeavesComponent } from './pages/leaves/leaves.component';
+import { AttendaceComponent } from './pages/attendace/attendace.component';
 
 export const routes: Routes = [
   {
@@ -35,5 +36,13 @@ export const routes: Routes = [
   {
     path: 'leaves',
     component: LeavesComponent,
+  },
+  {
+    path: 'attendace',
+    component: AttendaceComponent,
+  },
+  {
+    path: 'attendace/:id',
+    component: AttendaceComponent,
   },
 ];

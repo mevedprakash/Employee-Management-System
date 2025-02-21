@@ -21,7 +21,9 @@ namespace EmployeeManagementSystem.Controllers
         private readonly IConfiguration configuration;
         private readonly IRepository<Employee> empRepo;
 
-        public AuthController(IRepository<User> userRepo, IConfiguration configuration, IRepository<Employee> empRepo)
+        public AuthController(IRepository<User> userRepo,
+            
+            IConfiguration configuration, IRepository<Employee> empRepo)
         {
 
             this.userRepo = userRepo;
@@ -87,19 +89,11 @@ namespace EmployeeManagementSystem.Controllers
                 {
                     employee.Name = model.Name;
                 }
-                if (!string.IsNullOrEmpty(model.Email))
-                {
-                    employee.Email = model.Email;
-                }
                 if (!string.IsNullOrEmpty(model.Phone))
                 {
                     employee.Phone = model.Phone;
                 }
                 empRepo.Update(employee);
-            }
-            if (!string.IsNullOrEmpty(model.Email))
-            {
-                user.Email = model.Email;
             }
             if (!string.IsNullOrEmpty(model.ProfileImage))
             {
@@ -123,6 +117,7 @@ namespace EmployeeManagementSystem.Controllers
             var employee = (await empRepo.GetAll(x => x.UserId == user.Id)).FirstOrDefault();
             return Ok(new ProfileDto()
             {
+                Salary = employee?.Salary,
                 Name = employee?.Name,
                 Email = user.Email,
                 Phone = employee?.Phone,

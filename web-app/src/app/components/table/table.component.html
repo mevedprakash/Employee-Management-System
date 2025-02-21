@@ -7,15 +7,21 @@
     <ng-container [matColumnDef]="item.key">
       <th mat-header-cell *matHeaderCellDef>{{ item.key }}</th>
       <td mat-cell *matCellDef="let element">
-        @if(item.key == 'action'){ @for (btn of item.format(element); track
-        $index) {
-        <button mat-flat-button (click)="onButtonClick(btn, element)">
-          {{ btn }}
-        </button>
+        <span class="flex gap-4">
+          @if(item.key == 'action'){ @for (btn of item.format(element); track
+          $index) {
+          <button
+            mat-flat-button
+            [class]="btn"
+            (click)="onButtonClick(btn, element)"
+          >
+            {{ btn }}
+          </button>
 
-        } } @else {
-        {{ item.format(element) }}
-        }
+          } } @else {
+          {{ item.format(element) }}
+          }
+        </span>
       </td>
     </ng-container>
     } @else{
@@ -37,6 +43,7 @@
     <tr mat-header-row *matHeaderRowDef="cols"></tr>
     <tr mat-row *matRowDef="let row; columns: cols"></tr>
   </table>
+  @if(showPage){
   <div class="flex flex-row-reverse my-2 px-4">
     <mat-paginator
       #paginator
@@ -49,4 +56,5 @@
     >
     </mat-paginator>
   </div>
+  }
 </mat-card>

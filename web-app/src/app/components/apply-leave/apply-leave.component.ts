@@ -37,8 +37,9 @@ export class ApplyLeaveComponent {
       alert("Please select and provide all the field");
     }
     let leave: any = this.leaveForm.value;
+    console.log(leave);
     this.leaveService
-      .applyLeave(leave.type, leave.reason, leave.date)
+      .applyLeave(leave.type, leave.reason, leave.leaveDate)
       .subscribe((result) => {
         alert('Leave applied');
         this.dialogRef.close();

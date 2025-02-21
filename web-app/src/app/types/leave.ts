@@ -3,6 +3,8 @@ export interface ILeave {
   reason: string;
   leaveDate: string;
   status: LeaveStatus;
+  employeeId?:number
+  employeeName?:string
 }
 
 export enum LeaveType {
@@ -16,3 +18,5 @@ export enum LeaveStatus {
   Rejected = 2,
   Canelled = 3,
 }
+
+
