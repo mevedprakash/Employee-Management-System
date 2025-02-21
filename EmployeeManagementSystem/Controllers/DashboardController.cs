@@ -13,17 +13,21 @@ namespace EmployeeManagementSystem.Controllers
     {
         private readonly IRepository<Employee> empRepo;
         private readonly IRepository<Department> depRepo;
+        private readonly IRepository<Leave> leaveRepo;
 
-        public DashboardController(IRepository<Employee> empRepo,IRepository<Department> depRepo)
+        public DashboardController(IRepository<Employee> empRepo,
+            IRepository<Department> depRepo,
+            IRepository<Leave> leaveRepo)
         {
             this.empRepo = empRepo;
             this.depRepo = depRepo;
+            this.leaveRepo = leaveRepo;
         }
 
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> TotalSalary()
-        { 
+        {
             var empList = await empRepo.GetAll();
             var totalSalary = empList.Sum(x => x.Salary ?? 0);
             var employeeCount = empList.Count;
@@ -48,6 +52,24 @@ namespace EmployeeManagementSystem.Controllers
                 EmployeeCount = y.Count(),
             });
             return Ok(result);
+        }
+        [HttpGet("employee-leave-today")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetEmployeeOnLeave()
+        {
+            var onLeaveList = await leaveRepo.GetAll(x =>
+            DateTime.Compare(x.LeaveDate.Date, DateTime.UtcNow.Date) == 0);
+            var employeeIds = onLeaveList.Select(x => x.EmployeeId).ToList();
+            var employeeList = await empRepo.GetAll(x => employeeIds.Contains(x.Id));
+            var employeeOnLeave = onLeaveList.Select(x => new LeaveDto()
+            {
+                EmployeeId = x.Id,
+                Reason = x.Reason,
+                Type = x.Type,
+                Status = x.Status,
+                EmployeeName = employeeList.FirstOrDefault(y => y.Id == x.EmployeeId)?.Name!
+            }).ToList();
+            return Ok(employeeOnLeave);
         }
 
     }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.Security.Claims;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace EmployeeManagementSystem.Controllers
 {
@@ -32,13 +33,14 @@ namespace EmployeeManagementSystem.Controllers
         [Authorize(Roles = "Employee")]
         public async Task<IActionResult> ApplyLeave([FromBody] LeaveDto model)
         {
+            var date = TimeZoneInfo.ConvertTimeFromUtc(model.LeaveDate.Value, TimeZoneInfo.Local);
             var employeeId = await userHelper.GetEmployeeId(User);
             var leave = new Leave()
             {
                 EmployeeId = employeeId.Value,
                 Reason = model.Reason!,
                 Type = (int)model.Type!,
-                LeaveDate = model.LeaveDate!.Value,
+                LeaveDate = date,
                 Status = (int)LeaveStatus.Pending
             };
             await leaveRepo.AddAsync(leave);
